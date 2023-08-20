@@ -66,16 +66,16 @@ function command_handler(command) {
         content.innerHTML += `<a href="${projects[e]}">${e}</a><br>`;
       }
       break;
-    case "sudo rm -rf":
-      window.close();
-      break;
-    case "sudo rm rf":
-      window.close();
-      break;
-      case "exit":
-        const newWindow = window.open("", "_self");
-        newWindow.close();
+      case "sudo rm -rf":
+        window.location.href = "over.html"; // Redirect to an exit page
         break;
+      case "exit":
+        const shouldClose = confirm("Are you sure you want to exit the terminal?");
+        if (shouldClose) {
+          window.close();
+        }
+        break;
+      
       
     case "ls":
       content.innerHTML += `<br>aboutMe.txt<br>`;
