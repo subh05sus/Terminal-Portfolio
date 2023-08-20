@@ -69,6 +69,12 @@ function command_handler(command) {
     case "sudo rm -rf":
       window.close();
       break;
+    case "sudo rm rf":
+      window.close();
+      break;
+    case "exit":
+      window.close();
+      break;
     case "ls":
       content.innerHTML += `<br>aboutMe.txt<br>`;
       break;
