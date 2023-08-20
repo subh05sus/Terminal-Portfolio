@@ -10,7 +10,7 @@
 
 <body>
     <div id="Terminal" class="Terminal">
-        Hi, I am <span class="name">Subhadip Saha :)</span><br><br>
+        Hi, I am <span class="name" id="element">Subhadip Saha :)</span><br><br>
         I am a <span class="game">Game Developer</span> and aspiring <span class="backend">Backend Developer</span>
         ^_^<br>
         Won an <a class="mlh" href="https://twitter.com/SubhadipSuDi/status/1690924206920523776?s=20">MLH Hackathon</a> - Building <a class="ddc" href="https://www.linkedin.com/company/devdotcom">DevDotCom</a> - Freelance Graphic Designer
@@ -18,9 +18,16 @@
             <br>Type help for a list of commands.<br></p><br>$<form><input /></form>
         <div class="Buttons"><button class="Under" onclick="Hide()">_</button>
             <button class="x"
-                onclick="document.getElementById('Terminal').outerHTML=''">x</button></div>
+            onclick="document.getElementById('Terminal').outerHTML=''">x</button></div>
     </div>
-
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+            <script>
+                var typed = new Typed('#element', {
+                  strings: ['','Subhadip Saha^3000', 'Subh'],
+                  typeSpeed: 45,
+                  smartBackspace: true, // Default value
+                });
+              </script>
     <script>on_load()</script>
 </body>
 
