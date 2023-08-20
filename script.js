@@ -12,7 +12,7 @@ function on_load() {
 }
 
 projects = {
-  "<br><span class = 'project'>> Portfolio Terminal</span><br><span class = 'projectdes'>A terminal that shows your work</span>": "https://github.com/subh05sus/DevSnake",
+  "<br><span class = 'project'>> Portfolio Terminal</span><br><span class = 'projectdes'>A terminal that shows your work</span>": "https://github.com/subh05sus/Terminal-Portfolio",
   "<span class = 'project'>> DevSnake</span><br><span class = 'projectdes'>A 2D Classic Snake Game but for developers</span>": "https://github.com/subh05sus/DevSnake",
   "<span class = 'project'>> YourMedic</span><br><span class = 'projectdes'>A virtual 3D doctor that suggest you cures with natural human-like facial expressions</span>": "https://github.com/MenOfCultureSS0/YourMedic",
   "<span class = 'project'>> GeetaGPT</span><br><span class = 'projectdes'>GPT powered AI that mimics like Lord Krishna</span>": "https://geeta-gpt.onrender.com/",
