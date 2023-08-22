@@ -437,6 +437,8 @@ function help(console) {
     "calc expression - Perform simple calculations<br>" +
     "weather CITY - Get current weather for a city<br>" +
     "datetime - Display the current date and time<br>" +
+    "github - Open my GitHub profile<br>" +
+    "contact - Get my contact information<br>" +
     "clear - Clear the screen<br>" +
     "sudo rm -rf - Don't try kiddo<br>";
 }
