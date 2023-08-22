@@ -8,7 +8,7 @@
 body {
     position: absoulute;
 	/* background: linear-gradient(-45deg, red, yellow, rgb(0, 255, 0), cyan, blue, purple, red); */
-	background: rgb(43, 43, 43);
+	background: #2b2b2b;
 	background-size: 700% 700%;
 	/* animation: gradient 15s ease infinite; */
 	height: calc(100vh - 10px);
@@ -133,4 +133,30 @@ form {
 	100% {
         background-position: 0% 50%;
 	}
+}
+
+
+
+.username{
+    color: rgb(191, 0, 255);
+}
+
+.file-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .file-list th, .file-list td {
+    padding: 8px 12px;
+  }
+  
+  .file-list tr:nth-child(even) {
+    background-color: transparent;
+  }
+
+  
+
+.work-heading{
+    color:  rgb(191, 0, 255);
 }
