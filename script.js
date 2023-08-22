@@ -10,20 +10,7 @@ function on_load() {
     return false;
   };
 }
-const quotes = [
-  // ... your existing quotes
-  "Life is really simple, but we insist on making it complicated. - Confucius",
-  "You miss 100% of the shots you don't take. - Wayne Gretzky",
-  "The only way to do great work is to love what you do. - Steve Jobs",
-  "Change your thoughts and you change your world. - Norman Vincent Peale",
-  "Success is walking from failure to failure with no loss of enthusiasm. - Winston S. Churchill",
-  "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
-  "The best revenge is massive success. - Frank Sinatra",
-  "Do not wait for leaders; do it alone, person to person. - Mother Teresa",
-  "Challenges are what make life interesting and overcoming them is what makes life meaningful. - Joshua J. Marine",
-  "The only thing we have to fear is fear itself. - Franklin D. Roosevelt",
-  // Add more quotes here
-];
+
 
 projects = {
   "<br><span class = 'project'>> Portfolio Terminal</span><br><span class = 'projectdes'>A terminal that shows your work</span>":
@@ -166,7 +153,6 @@ function command_handler(command) {
       content.innerHTML += asciiArt;
       break;
 
-    // Inside the switch statement of command_handler function
     case "contact":
       content.innerHTML += "<br>Contact Information:<br>";
       content.innerHTML +=
@@ -175,7 +161,6 @@ function command_handler(command) {
         "LinkedIn: <a href='https://www.linkedin.com/in/subhadipsaha'>https://www.linkedin.com/in/subhadipsaha</a><br>";
       break;
 
-    // Inside the switch statement of command_handler function
     case "cat resume.pdf":
       window.open('https://d1fdloi71mui9q.cloudfront.net/D42aFXgIRBuuTf4v3BcQ_Subhadip-s%20Resume.pdf');
       // content.innerHTML +=
@@ -190,9 +175,7 @@ function command_handler(command) {
     //   // Add more testimonials
     //   break;
 
-    // Inside the switch statement of command_handler function
-    // Inside the switch statement of command_handler function
-    // Inside the switch statement of command_handler function
+
     case "github":
       const githubUsername = "subh05sus"; // Replace with your GitHub username
       fetch(`https://api.github.com/users/${githubUsername}`)
