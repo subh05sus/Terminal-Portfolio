@@ -6,7 +6,7 @@
 }
 
 body {
-    position: absoulute;
+    position: fixed;
 	/* background: linear-gradient(-45deg, red, yellow, rgb(0, 255, 0), cyan, blue, purple, red); */
 	background: #2b2b2b;
 	background-size: 700% 700%;
@@ -186,3 +186,41 @@ form {
     border-radius: 4px;
 }
  
+
+
+.app{
+    display: none;
+    margin-left: 60px;
+    margin-top: 60px;
+    height: 75px;
+    position: fixed;
+}
+
+
+
+.Terminal{
+    padding: 40px;
+}
+
+.app {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 50px; /* Adjust the width as needed */
+    width: auto;
+    margin-right: 5px; /* Add spacing between the image and text */
+}
+
+
+
+.app img {
+    width: 60px; /* Adjust the width as needed */
+    height: 60px;
+    margin-right: 5px; /* Add spacing between the image and text */
+}

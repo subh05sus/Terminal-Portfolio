@@ -1,9 +1,12 @@
 let terminal;
 let content;
+let terminalAPP;
 
 function on_load() {
   terminal = document.getElementById("Terminal");
   content = document.getElementById("Content");
+  terminalAPP = document.getElementById("app");
+  terminalAPP.style.display = "none";
   terminal.getElementsByTagName("form")[0].onsubmit = function () {
     command_handler(terminal.getElementsByTagName("input")[0].value);
     terminal.getElementsByTagName("input")[0].value = "";
@@ -428,11 +431,33 @@ function help(console) {
 
 function Hide() {
   if (!terminal.classList.contains("hidden")) {
-    terminal.className += " hidden";
+
+    terminal.classList.add("hidden");
+      terminalAPP.style.display = "initial"; // Show the app button
   } else {
-    terminal.classList.remove("hidden");
+      terminal.classList.remove("hidden");
+      
+      terminalAPP.style.display = "none"; // Hide the app button
+    }
   }
+  function AppOpen() {
+    if (terminal.classList.contains("hidden")) {   
+      terminal.classList.remove("hidden");
+      terminalAPP.style.display = "none"; // Hide the app button
+    }
+
+
+    if (terminal.style.display == "none"){      
+      terminal.style.display = "block";
+      terminalAPP.style.display = "none"; // Hide the app button
+    }
+  }
+  
+  function closeT(){
+    terminal.style.display = "none";
+    terminalAPP.style.display = "initial"; // Show the app button
 }
+
 
 const asciiArt = `
 <span class="ascii" style="color: white; background: #111111;
