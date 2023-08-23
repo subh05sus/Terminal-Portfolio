@@ -233,9 +233,6 @@ img {
         height: 150px;
     }
 
-    .Terminal{
-        height: 80%;
-    }
     .hidden {
         margin-top: calc(30vh - 80px);
     }
