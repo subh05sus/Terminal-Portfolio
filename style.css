@@ -235,7 +235,7 @@ img {
     .Terminal {
         width: 95%; /* Make the terminal full width on smaller screens */
         height: 80%; /* Adjust the height as needed for smaller screens */
-        font-size: 0.9rem; /* Slightly reduce font size for smaller screens */
+        font-size: 0.8rem; /* Slightly reduce font size for smaller screens */
         border-radius: 0; /* Remove border radius for a more modern look */
         padding: 10px; /* Add padding for better readability */
     }
