@@ -241,7 +241,7 @@ img {
         top: calc(90vh - 60px);
     }
     .Terminal{
-        width: 95%;
-        height: 80%;
+        width: 85%;
+        height: 85%;
     }
 }
