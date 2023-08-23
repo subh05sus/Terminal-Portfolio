@@ -47,7 +47,7 @@ links = {
 };
 
 function command_handler(command) {
-  content.innerHTML += "<br>$ " + command + "<br>";
+  content.innerHTML += "<br><span class = 'meh'>$ </span>" + command + "<br>";
   switch (command.toLowerCase()) {
     case "help":
       help(content);
