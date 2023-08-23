@@ -250,4 +250,7 @@ img {
     .meh{
         font-size: 1.01rem;
     }
+    form {
+        margin-left: 25px;
+    }
 }
