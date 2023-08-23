@@ -227,7 +227,7 @@ img {
 
 
 /* Media query for mobile devices */
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1600px) {
     .app img {
         width: 150px;
         height: 150px;
@@ -236,6 +236,12 @@ img {
     .Terminal{
         height: 80%;
     }
-
+    .hidden {
+        margin-top: calc(50vh - 80px);
+    }
+    
+    .hidden > .Buttons {
+        top: calc(50vh - 60px);
+    }
 
 }
