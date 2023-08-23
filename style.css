@@ -35,7 +35,7 @@ input {
     color: white;
     border: none;
     width: calc(100vw - 125px);
-    font-size: 1.01rem;
+    font-size: 1.5rem;
 }
 
 
@@ -245,7 +245,6 @@ img {
         height: 85%;
     }
     .Content{
-        font-size: 1.01rem;
+        font-size: 1.5rem;
     }
-
 }
