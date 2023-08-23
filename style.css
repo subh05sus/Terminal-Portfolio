@@ -232,8 +232,12 @@ img {
         width: 150px;
         height: 150px;
     }
-    .Terminal{
-        height: 50%;
+    .body{
+        height: 80%;
     }
+    .Terminal{
+        height: 95%;
+    }
+
 
 }
