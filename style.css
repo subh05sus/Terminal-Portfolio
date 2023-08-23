@@ -220,14 +220,18 @@ img {
 
 
 .app img {
-    width: 150px; /* Adjust the width as needed */
-    height: 150px;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px;
     margin-right: 5px; /* Add spacing between the image and text */
 }
 
 
 /* Media query for mobile devices */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+    .app img {
+        width: 150px;
+        height: 150px;
+    }
     body {
         overflow: scroll;
         overflow-y: scroll;
