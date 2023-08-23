@@ -232,11 +232,9 @@ img {
         width: 150px;
         height: 150px;
     }
-    .body{
-        height: 80%;
-    }
+
     .Terminal{
-        height: 95%;
+        height: 80%;
     }
 
 
