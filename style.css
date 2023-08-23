@@ -220,8 +220,8 @@ img {
 
 
 .app img {
-    width: 80px; /* Adjust the width as needed */
-    height: 80px;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px;
     margin-right: 5px; /* Add spacing between the image and text */
 }
 
@@ -232,8 +232,8 @@ img {
         height: 50%;
     }
     .app img {
-        width: 100px; /* Adjust the width as needed */
-        height: 100px;
+        width: 125px; /* Adjust the width as needed */
+        height: 125px;
         margin-right: 5px; /* Add spacing between the image and text */
     }
     .Terminal {
