@@ -234,11 +234,11 @@ img {
     }
 
     .hidden {
-        margin-top: calc(30vh - 80px);
+        margin-top: calc(120vh - 80px);
     }
     
     .hidden > .Buttons {
-        top: calc(30vh - 60px);
+        top: calc(120vh - 60px);
     }
 
 }
