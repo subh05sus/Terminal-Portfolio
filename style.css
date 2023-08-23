@@ -240,5 +240,8 @@ img {
     .hidden > .Buttons {
         top: calc(90vh - 60px);
     }
-
+    .Terminal{
+        width: 95%;
+        height: 95%;
+    }
 }
