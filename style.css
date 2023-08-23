@@ -229,6 +229,7 @@ img {
 /* Media query for mobile devices */
 @media (max-width: 768px) {
     body {
+        overflow: scroll;
         overflow-y: scroll;
     }
 }
