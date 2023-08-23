@@ -232,8 +232,8 @@ img {
         height: 50%;
     } */
     .app img {
-        width: 125px; /* Adjust the width as needed */
-        height: 125px;
+        width: 160px; /* Adjust the width as needed */
+        height: 160px;
         margin-right: 5px; /* Add spacing between the image and text */
     }
     .Terminal {
@@ -241,6 +241,6 @@ img {
         height: 30vh; /* Adjust the height as needed for smaller screens */
         font-size: 0.8rem; /* Slightly reduce font size for smaller screens */
         border-radius: 0; /* Remove border radius for a more modern look */
-        padding: 10px; /* Add padding for better readability */
+        padding-bottom: 100px; /* Add padding for better readability */
     }
 }
