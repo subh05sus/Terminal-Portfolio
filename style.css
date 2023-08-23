@@ -237,11 +237,11 @@ img {
         height: 80%;
     }
     .hidden {
-        margin-top: calc(70vh - 80px);
+        margin-top: calc(60vh - 80px);
     }
     
     .hidden > .Buttons {
-        top: calc(70vh - 60px);
+        top: calc(60vh - 60px);
     }
 
 }
