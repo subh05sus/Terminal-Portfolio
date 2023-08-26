@@ -20,7 +20,7 @@ body {
 
 .Terminal {
     --padding: 50px;
-    --margin: 10px;
+    --margin: 0;
     padding: var(--padding);
     margin: var(--margin);
     height: calc(100vh - calc(calc(var(--padding) + var(--margin)) * 2));
@@ -29,16 +29,18 @@ body {
     color: white;
     overflow-x: hidden;
     transition: all .35s ease-in;
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 input {
     background: none;
     color: white;
     border: none;
-    width: calc(100vw - 125px);
+    width: calc(100vw - 700px);
     font-size: inherit;
+    margin-top: 5px;
 }
+
 
 
 
@@ -136,7 +138,7 @@ div p a:after {
     display: block;
     content: "";
     /* background: linear-gradient(90deg, #000, #f00 20%, #00f); */
-    background: gray;
+    background: transparent;
     width: 100%;
     height: 2px;
 }
@@ -279,7 +281,7 @@ right: 0;
     left: 0;
     top: 0;
 }
-.Buttons {
+.titlebar {
     cursor: grab;
     z-index: 1001;
 }
@@ -300,7 +302,7 @@ body {
     text-align: center;
     position:relative;
     flex-grow: 1;
-    transform: translate(-7%, -35%);
+    transform: translate(0, -35%);
     font-size: 15px;
     transition: all 0.35s ease-in;
     z-index: 15;
@@ -339,6 +341,7 @@ body {
 .opening {
     animation: openAnimation 0.5s forwards;
 }
+
 
 
 @media only screen and (max-width: 1600px) {
@@ -388,6 +391,11 @@ body {
         left: 0;
         top: 0;
         transform: translate(0, 0);
+        .command{
+            margin-top: 0;
+            transition: all 0.35s ease-in;
+    
+        }
     }
     .maxed > .Buttons{
         left: 20px;

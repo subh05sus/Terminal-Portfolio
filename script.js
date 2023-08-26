@@ -305,6 +305,32 @@ function command_handler(command) {
         "- Git and Version Control<br>";
       break;
 
+    // case "spotify":
+    //   const accessToken = ""; // Replace with the actual access token
+
+    //   async function fetchSpotifyListenHistory(accessToken) {
+    //     const url = "https://api.spotify.com/v1/me/player/recently-played";
+    //     const headers = {
+    //       Authorization: `Bearer ${accessToken}`,
+    //     };
+
+    //     const response = await fetch(url, { headers });
+    //     const data = await response.json();
+
+    //     if (response.ok) {
+    //       console.log(data.items)
+    //       return data.items;
+    //     } else {
+    //       throw new Error(
+    //         `Failed to fetch Spotify listen history: ${data.error.message}`
+    //       );
+    //     }
+    //   }
+    //   content.innerHTML += "<br>Fetching Spotify listen history...<br>";
+    //   fetchSpotifyListenHistory();
+
+    //   break;
+
     case "cat workexperience.txt":
       content.innerHTML +=
         "<br><span class='work-heading'><b>Game Dev Lead - GDSC JIS College of Engineering</b></span><br>" +
@@ -452,33 +478,29 @@ function Maxim() {
 }
 
 function AppOpen() {
-
-
-  
-  
   if (terminal.classList.contains("hidden")) {
     terminal.classList.remove("hidden");
   }
-  
+
   if (terminal.style.display == "none") {
     terminal.classList.add("opening");
-  
+
     setTimeout(() => {
-        terminal.classList.remove("opening");
+      terminal.classList.remove("opening");
     }, 500);
     terminal.style.display = "block";
   }
 }
 
 function closeT() {
+  content.innerHTML = "";
   terminal.classList.add("closing");
 
   setTimeout(() => {
-      terminal.style.display = "none";
-      terminal.classList.remove("closing");
+    terminal.style.display = "none";
+    terminal.classList.remove("closing");
   }, 500);
 }
-
 
 function generateSpeechBubble(message) {
   const lines = message.split("\n");
@@ -539,7 +561,7 @@ function handleMouseDown(event) {
     terminal.style.cursor = "grabbing";
 
     initialX = event.clientX;
-    initialY = event.clientY + 60;
+    initialY = event.clientY;
 
     const rect = terminal.getBoundingClientRect();
     offsetX = initialX - rect.left;
@@ -557,10 +579,19 @@ function handleMouseMove(event) {
     const x = event.clientX - offsetX;
     const y = event.clientY - offsetY;
 
-    terminal.style.left = `${x}px`;
-    terminal.style.top = `${y}px`;
+    // Calculate the boundaries of the screen
+    const maxX = window.innerWidth - terminal.offsetWidth;
+    const maxY = window.innerHeight - terminal.offsetHeight;
+
+    // Clamp the terminal position to stay within the screen boundaries
+    const clampedX = Math.max(0, Math.min(x, maxX));
+    const clampedY = Math.max(0, Math.min(y, maxY));
+
+    terminal.style.left = `${clampedX}px`;
+    terminal.style.top = `${clampedY}px`;
   }
 }
+
 
 function handleMouseUp() {
   if (
