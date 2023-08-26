@@ -8,7 +8,8 @@
     <title>Subhadip Saha</title>
 </head>
 
-<body>
+<body onload="loadfun()">
+    <div id="loading"> <img src="https://i.imgur.com/FEDTpyE.gif" alt="Loading"></div>
             <button class="app" id="app" onclick="AppOpen()"><img src="terminal.png" alt="Terminal"></button>
             <div id="Terminal" class="Terminal">
                 <br>
@@ -44,6 +45,12 @@
         });
     </script>
     <script>on_load()</script>
+    <script>
+        var load = document.getElementById("loading");
+        function loadfun(){
+            load.style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@ let terminalAPP;
 
 function on_load() {
   terminal = document.getElementById("Terminal");
+  terminal.style.display = "none"
   content = document.getElementById("Content");
   terminalAPP = document.getElementById("app");
   AvButtons = document.getElementById("Buttons");
@@ -478,6 +479,15 @@ function Maxim() {
 }
 
 function AppOpen() {
+  if(!terminal.classList.contains("hidden") && !(terminal.style.display == "none")){
+    terminal.classList.add("shake");
+
+    setTimeout(function() {
+        terminal.classList.remove("shake");
+    }, 500);
+    
+
+  }
   if (terminal.classList.contains("hidden")) {
     terminal.classList.remove("hidden");
   }
@@ -614,3 +624,14 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("mouseup", handleMouseUp);
 });
+
+
+
+
+
+
+
+
+
+
+
