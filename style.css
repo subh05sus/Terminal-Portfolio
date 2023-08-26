@@ -231,8 +231,8 @@ img {
 
 
 .app img {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     margin-right: 5px; 
 }
 
@@ -345,7 +345,7 @@ body {
 
 
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 10000px) {
 
 
     .hidden {
