@@ -15,7 +15,7 @@ body {
     padding: 0px;
     overflow: none;
     overflow-y: hidden;
-    transition: all .5s ease-in;
+    transition: all .35s ease-in;
 }
 
 .Terminal {
@@ -28,7 +28,7 @@ body {
     background: #111;
     color: white;
     overflow-x: hidden;
-    transition: all .5s ease-in;
+    transition: all .35s ease-in;
     margin-top: 60px;
 }
 
@@ -37,8 +37,9 @@ input {
     color: white;
     border: none;
     width: calc(100vw - 125px);
-    font-size: 1.01rem;
+    font-size: inherit;
 }
+
 
 
 
@@ -102,7 +103,7 @@ a {
     position: absolute;
     top: 20px;
     right: 30px;
-    transition: all .5s ease-in;
+    transition: all .35s ease-in;
 }
 
 .hidden {
@@ -236,7 +237,7 @@ img {
     margin: 0;
     width: 96%;
     height: 93%;
-    transition: all .5s ease-in;
+    transition: all .35s ease-in;
 transform: translate(0, 0);
 left: 0;
 right: 0;
@@ -272,11 +273,11 @@ right: 0;
 
   }
   .Terminal {
-    /* Existing styles */
+    background: rgba(17, 17, 17, 0.7); /* Add transparency */
+    backdrop-filter: blur(10px); /* Add blur effect */
     position: absolute;
     left: 0;
     top: 0;
-    /* Rest of the styles */
 }
 .Buttons {
     /* Existing styles */
@@ -291,12 +292,26 @@ body {
     background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat;
 }
+.titlebar{
+    display: none;
+}
+
+
 
 @media only screen and (max-width: 1600px) {
 
 
     .hidden {
-        margin-top: calc(90vh - 80px);
+        margin-top: calc(90vh - 60px);
+        .titlebar{
+            display:inline;
+            color: white;
+            text-align: center;
+            position:relative;
+            flex-grow: 1;
+            transform: translateY(-35%);
+            font-size: 15px;
+        }
     }
     
     .hidden > .Buttons {
@@ -314,6 +329,9 @@ body {
         height: 60%;
         font-size: 0.8rem;
     }
+    .hidden{
+        width: 15%;
+    }
     
     form {
         margin-left: 25px;
@@ -322,7 +340,7 @@ body {
         margin: 0;
         width: 95%;
         height: 93%;
-        transition: all .5s ease-in;
+        transition: all .35s ease-in;
         font-size:1.01rem;
         left: 0;
         top: 0;
@@ -331,5 +349,21 @@ body {
     .maxed > .Buttons{
         left: 20px;
         top: 10px;
+    }
+    .Buttons {
+        position: absolute;
+        transition: all .35s ease-in;
+        display: flex;
+        
+    }
+    
+    .titlebar {
+        color: white;
+        text-align: center;
+        position:relative;
+        flex-grow: 1;
+        transform: translateY(-35%);
+        font-size: 15px;
+
     }
 }
