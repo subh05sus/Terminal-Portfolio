@@ -29,7 +29,7 @@ body {
     color: white;
     overflow-x: hidden;
     transition: all .5s ease-in;
-
+    margin-top: 60px;
 }
 
 input {
@@ -81,12 +81,17 @@ a {
     font-weight: bold;
     outline: none;
     border: none;
-    height: 10px;
-    width: 10px;
-}
 
+}
+.Buttons>button{
+    height: 3px;
+    width: 3px;
+}
 .Buttons *:after {
     content: none;
+}
+.Buttons{
+    height: 40px;
 }
 
 .Buttons *:active {
@@ -101,9 +106,6 @@ a {
 }
 
 .hidden {
-    margin-top: calc(100vh - 80px);
-}
-.hidden.Maximize {
     margin-top: calc(100vh - 80px);
 }
 
@@ -199,7 +201,7 @@ form {
 
 
 .app{
-    /* display: none; */
+    display: initial;
     margin-left: 60px;
     margin-top: 60px;
     height: 75px;
@@ -212,13 +214,9 @@ form {
     align-items: center;
 }
 
-
-
 .Terminal{
     padding: 40px;
 }
-
-
 
 img {
     height: 50px; /* Adjust the width as needed */
@@ -239,6 +237,10 @@ img {
     width: 96%;
     height: 93%;
     transition: all .5s ease-in;
+transform: translate(0, 0);
+left: 0;
+right: 0;
+
 }
 
 .app{
@@ -248,9 +250,43 @@ img {
     z-index: 2;
     position: absolute;
 }
+.Buttons{
+    z-index: 3;
+}
 ::-webkit-scrollbar {
-    display: none;
+    display: none;.titlebar {
+        text-align: center;
+        margin: 0 auto; /* Center the titlebar */
+    }
   }
+
+
+  #mydiv {
+    position: absolute;
+    z-index: 9;
+  }
+  
+  #mydivheader {
+    padding: 10px;
+    z-index: 10;
+
+  }
+  .Terminal {
+    /* Existing styles */
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* Rest of the styles */
+}
+.Buttons {
+    /* Existing styles */
+    cursor: grab;
+}
+
+body * {
+    user-select: none;
+}
+
 
 @media only screen and (max-width: 1600px) {
 
@@ -284,6 +320,9 @@ img {
         height: 93%;
         transition: all .5s ease-in;
         font-size:1.01rem;
+        left: 0;
+        top: 0;
+        transform: translate(0, 0);
     }
     .maxed > .Buttons{
         left: 20px;

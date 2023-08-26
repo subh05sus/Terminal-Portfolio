@@ -15,9 +15,6 @@ function on_load() {
   };
 }
 
-
-
-
 projects = {
   "<br><span class = 'project'>> Portfolio Terminal</span><br><span class = 'projectdes'>A terminal that shows your work</span>":
     "https://github.com/subh05sus/Terminal-Portfolio",
@@ -168,7 +165,9 @@ function command_handler(command) {
       break;
 
     case "cat resume.pdf":
-      window.open('https://d1fdloi71mui9q.cloudfront.net/D42aFXgIRBuuTf4v3BcQ_Subhadip-s%20Resume.pdf');
+      window.open(
+        "https://d1fdloi71mui9q.cloudfront.net/D42aFXgIRBuuTf4v3BcQ_Subhadip-s%20Resume.pdf"
+      );
       // content.innerHTML +=
       // "<br>Download my resume: <a href='https://d1fdloi71mui9q.cloudfront.net/D42aFXgIRBuuTf4v3BcQ_Subhadip-s%20Resume.pdf' download>Resume.pdf</a><br>";
       break;
@@ -180,7 +179,6 @@ function command_handler(command) {
     //   content.innerHTML += "<blockquote>\"Working with Subhadip was a great experience. He's a problem solver and a team player.\" - Jane Smith, Designer</blockquote>";
     //   // Add more testimonials
     //   break;
-
 
     case "github":
       const githubUsername = "subh05sus"; // Replace with your GitHub username
@@ -308,45 +306,38 @@ function command_handler(command) {
         "- Git and Version Control<br>";
       break;
 
-      case "cat workexperience.txt":
-        content.innerHTML +=
-          "<br><span class='work-heading'><b>Game Dev Lead - GDSC JIS College of Engineering</b></span><br>" +
-          "08/2023 - Present<br>" +
-          "- Leading the game development activities and initiatives within the college.<br>" +
-          "- Managing and guiding the members of the Google Developer Student Club (GDSC).<br>" +
-          "<br><span class='work-heading'><b>Co-Founder - DevDotCom</b></span><br>" +
-          "11/2022 - Present<br>" +
-          "- A global coding community with 500+ members.<br>" +
-          "- Organized events, competitions, and workshops for learning and networking.<br>" +
-          "- Built and grew a public coding community with 300+ members.<br>" +
-          "- Organized successful coding events and competition, engaging over 50 participants.<br>" +
-          "- Led events on Git and GitHub, providing valuable learning.<br>" +
-          "- Designed promotional materials and posters using graphic design skills.<br>" +
-          "<br><span class='work-heading'><b>Student Ambassador - Intel</b></span><br>" +
-          "05/2023 - Present<br>" +
-          "- Represented Intel on campus as a brand advocate.<br>" +
-          "- Promoted Intel's technologies and initiatives to fellow students.<br>" +
-          "- Engaged students on Intel's OneAPI technology and innovation.<br>" +
-          "<br><span class='work-heading'><b>Graphic Designer / Management Team Member - PHICSIT</b></span><br>" +
-          "05/2023 - Present<br>" +
-          "- Made designs for promotional posters for PHICSIT.<br>" +
-          "- Created visually appealing graphics for speaker sessions.<br>" +
-          "- Utilized Canva, Figma, and Microsoft Designer for high-quality designs.<br>";
-        break;
-      
-        case "easter egg":
-          content.innerHTML +=
-            "<br><b>Easter Egg:</b><br>" +
-            "You found it! Congratulations! 🎉<br>" +
-            "Now go ahead and explore more commands in this terminal.<br>";
-          break;
+    case "cat workexperience.txt":
+      content.innerHTML +=
+        "<br><span class='work-heading'><b>Game Dev Lead - GDSC JIS College of Engineering</b></span><br>" +
+        "08/2023 - Present<br>" +
+        "- Leading the game development activities and initiatives within the college.<br>" +
+        "- Managing and guiding the members of the Google Developer Student Club (GDSC).<br>" +
+        "<br><span class='work-heading'><b>Co-Founder - DevDotCom</b></span><br>" +
+        "11/2022 - Present<br>" +
+        "- A global coding community with 500+ members.<br>" +
+        "- Organized events, competitions, and workshops for learning and networking.<br>" +
+        "- Built and grew a public coding community with 300+ members.<br>" +
+        "- Organized successful coding events and competition, engaging over 50 participants.<br>" +
+        "- Led events on Git and GitHub, providing valuable learning.<br>" +
+        "- Designed promotional materials and posters using graphic design skills.<br>" +
+        "<br><span class='work-heading'><b>Student Ambassador - Intel</b></span><br>" +
+        "05/2023 - Present<br>" +
+        "- Represented Intel on campus as a brand advocate.<br>" +
+        "- Promoted Intel's technologies and initiatives to fellow students.<br>" +
+        "- Engaged students on Intel's OneAPI technology and innovation.<br>" +
+        "<br><span class='work-heading'><b>Graphic Designer / Management Team Member - PHICSIT</b></span><br>" +
+        "05/2023 - Present<br>" +
+        "- Made designs for promotional posters for PHICSIT.<br>" +
+        "- Created visually appealing graphics for speaker sessions.<br>" +
+        "- Utilized Canva, Figma, and Microsoft Designer for high-quality designs.<br>";
+      break;
 
-
-
-
-
-
-
+    case "easter egg":
+      content.innerHTML +=
+        "<br><b>Easter Egg:</b><br>" +
+        "You found it! Congratulations! 🎉<br>" +
+        "Now go ahead and explore more commands in this terminal.<br>";
+      break;
 
     default:
       if (command.toLowerCase().startsWith("echo ")) {
@@ -434,67 +425,60 @@ function help(console) {
 
 function Hide() {
   if (!terminal.classList.contains("hidden")) {
-    if (terminal.classList.contains("maxed")) {   
+    terminal.style.left = "0"; // Hide the app button
+    terminal.style.top = "10%"; // Hide the app button
+    if (terminal.classList.contains("maxed")) {
       terminal.classList.remove("maxed");
     }
     terminal.classList.add("hidden");
-      terminalAPP.style.display = "initial"; // Show the app button
+    terminalAPP.style.display = "initial"; // Show the app button
   } else {
-      terminal.classList.remove("hidden");
-      
-      // terminalAPP.style.display = "none"; // Hide the app button
-    }
+    terminal.classList.remove("hidden");
+
+    // terminalAPP.style.display = "none"; // Hide the app button
   }
-
-
+}
 
 function Maxim() {
   if (!terminal.classList.contains("maxed")) {
-    if (terminal.classList.contains("hidden")) {   
+    terminal.style.left = "0"; // Hide the app button
+    terminal.style.top = "0"; // Hide the app button
+    if (terminal.classList.contains("hidden")) {
       terminal.classList.remove("hidden");
-      // terminalAPP.style.display = "none"; // Hide the app button
     }
     terminal.classList.add("maxed");
-    
-    
   } else {
-      terminal.classList.remove("maxed");
-      
-    }
+    terminal.classList.remove("maxed");
+  }
+}
+
+function AppOpen() {
+  if (terminal.classList.contains("hidden")) {
+    terminal.classList.remove("hidden");
+    // terminalAPP.style.display = "none"; // Hide the app button
   }
 
-
-
-  function AppOpen() {
-    if (terminal.classList.contains("hidden")) {   
-      terminal.classList.remove("hidden");
-      // terminalAPP.style.display = "none"; // Hide the app button
-    }
-
-
-    if (terminal.style.display == "none"){      
-      terminal.style.display = "block";
-      // terminalAPP.style.display = "none"; // Hide the app button
-    }
+  if (terminal.style.display == "none") {
+    terminal.style.display = "block";
+    // terminalAPP.style.display = "none"; // Hide the app button
   }
-  
-  function closeT(){
-    terminal.style.display = "none";
-    terminalAPP.style.display = "initial"; // Show the app button
+}
+
+function closeT() {
+  terminal.style.display = "none";
+  terminalAPP.style.display = "initial"; // Show the app button
 }
 
 function generateSpeechBubble(message) {
-  const lines = message.split('\n');
-  const longestLine = Math.max(...lines.map(line => line.length));
+  const lines = message.split("\n");
+  const longestLine = Math.max(...lines.map((line) => line.length));
   const bubble = [
     " " + "_".repeat(longestLine + 2),
     `< ${message} >`,
-    " " + "-".repeat(longestLine + 2)
+    " " + "-".repeat(longestLine + 2),
   ];
-  return bubble.join('\n');
+  return bubble.join("\n");
 }
-
-
 
 const asciiArt = `
 <span class="ascii" style="color: white; background: #111111;
@@ -529,3 +513,62 @@ font-size:12px;
 <span style="color:#000000;"> </span>
 `;
 
+let isDragging = false;
+
+let initialX, initialY, offsetX, offsetY;
+
+function handleMouseDown(event) {
+  if (
+    !terminal.classList.contains("hidden") &&
+    !terminal.classList.contains("maxed")
+  ) {
+    isDragging = true;
+    terminal.style.transition = "none";
+    terminal.style.zIndex = "1000";
+    terminal.style.cursor = "grabbing";
+
+    initialX = event.clientX;
+    initialY = event.clientY + 60;
+
+    const rect = terminal.getBoundingClientRect();
+    offsetX = initialX - rect.left;
+    offsetY = initialY - rect.top;
+  }
+}
+
+function handleMouseMove(event) {
+  if (
+    !terminal.classList.contains("hidden") &&
+    !terminal.classList.contains("maxed")
+  ) {
+    if (!isDragging) return;
+
+    const x = event.clientX - offsetX;
+    const y = event.clientY - offsetY;
+
+    terminal.style.left = `${x}px`;
+    terminal.style.top = `${y}px`;
+  }
+}
+
+function handleMouseUp() {
+  if (
+    !terminal.classList.contains("hidden") &&
+    !terminal.classList.contains("maxed")
+  ) {
+    if (isDragging) {
+      isDragging = false;
+      terminal.style.transition = ""; // Re-enable transitions
+      terminal.style.cursor = "grab"; // Reset cursor
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  terminal = document.getElementById("Terminal");
+  const terminalHeader = terminal.querySelector(".Buttons");
+
+  terminalHeader.addEventListener("mousedown", handleMouseDown);
+  window.addEventListener("mousemove", handleMouseMove);
+  window.addEventListener("mouseup", handleMouseUp);
+});
