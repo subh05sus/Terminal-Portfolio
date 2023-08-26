@@ -6,6 +6,7 @@ function on_load() {
   terminal = document.getElementById("Terminal");
   content = document.getElementById("Content");
   terminalAPP = document.getElementById("app");
+  AvButtons = document.getElementById("Buttons");
   terminalAPP.style.display = "none";
   terminal.getElementsByTagName("form")[0].onsubmit = function () {
     command_handler(terminal.getElementsByTagName("input")[0].value);
@@ -27,7 +28,7 @@ projects = {
   "<span class = 'project'>> GeetaGPT</span><br><span class = 'projectdes'>GPT powered AI that mimics like Lord Krishna</span>":
     "https://geeta-gpt.onrender.com/",
   "<span class = 'project'>> MeowGPT</span><br><span class = 'projectdes'>Fun GPT project that acts like a cat. Meow Meow</span>":
-    "https://geeta-gpt.onrender.com/",
+    "https://meow-gpt.onrender.com/",
   "<span class = 'project'>> Project Suzume</span><br><span class = 'projectdes'>A 3D open world game based on Suzume No Tojimari</span>":
     "https://github.com/subh05sus/Project-Suzume",
   "<span class = 'project'>> BlockRush</span><br><span class = 'projectdes'>A simple 3D infinite block game</span>":
@@ -433,25 +434,47 @@ function help(console) {
 
 function Hide() {
   if (!terminal.classList.contains("hidden")) {
-
+    if (terminal.classList.contains("maxed")) {   
+      terminal.classList.remove("maxed");
+    }
     terminal.classList.add("hidden");
       terminalAPP.style.display = "initial"; // Show the app button
   } else {
       terminal.classList.remove("hidden");
       
-      terminalAPP.style.display = "none"; // Hide the app button
+      // terminalAPP.style.display = "none"; // Hide the app button
     }
   }
+
+
+
+function Maxim() {
+  if (!terminal.classList.contains("maxed")) {
+    if (terminal.classList.contains("hidden")) {   
+      terminal.classList.remove("hidden");
+      // terminalAPP.style.display = "none"; // Hide the app button
+    }
+    terminal.classList.add("maxed");
+    
+    
+  } else {
+      terminal.classList.remove("maxed");
+      
+    }
+  }
+
+
+
   function AppOpen() {
     if (terminal.classList.contains("hidden")) {   
       terminal.classList.remove("hidden");
-      terminalAPP.style.display = "none"; // Hide the app button
+      // terminalAPP.style.display = "none"; // Hide the app button
     }
 
 
     if (terminal.style.display == "none"){      
       terminal.style.display = "block";
-      terminalAPP.style.display = "none"; // Hide the app button
+      // terminalAPP.style.display = "none"; // Hide the app button
     }
   }
   
