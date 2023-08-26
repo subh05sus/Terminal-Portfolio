@@ -425,10 +425,27 @@ body {
     }
 }
 
+@keyframes expandShrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.appMin {
+    animation: expandShrink 0.5s ease-in-out forwards;
+}
 
 .shake {
     animation: shake 0.5s ease-in-out forwards;
 }
+
 
 #loading {
     position: fixed;

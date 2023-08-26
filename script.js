@@ -8,6 +8,7 @@ function on_load() {
   content = document.getElementById("Content");
   terminalAPP = document.getElementById("app");
   AvButtons = document.getElementById("Buttons");
+  AppIcon = document.getElementById("AppIcon");
   terminal.getElementsByTagName("form")[0].onsubmit = function () {
     command_handler(terminal.getElementsByTagName("input")[0].value);
     terminal.getElementsByTagName("input")[0].value = "";
@@ -449,36 +450,64 @@ function help(console) {
     "sudo rm -rf - Don't try kiddo<br>";
 }
 
+let prevLeftHide, prevTopHide; // Store previous top and left values for Hide
+
 function Hide() {
   if (!terminal.classList.contains("hidden")) {
-    terminal.style.left = "0"; // Hide the app button
-    terminal.style.top = "10%"; // Hide the app button
+    prevLeftHide = terminal.style.left; // Store previous left value
+    prevTopHide = terminal.style.top; // Store previous top value
+    
+    terminal.style.left = "0";
+    terminal.style.top = "10%";
+    
     if (terminal.classList.contains("maxed")) {
       terminal.classList.remove("maxed");
     }
+    
     terminal.classList.add("hidden");
+    AppIcon.classList.add("appMin");
+    
+    setTimeout(function() {
+      AppIcon.classList.remove("appMin");
+    }, 500);
+    
     terminalAPP.style.display = "initial"; // Show the app button
   } else {
+    terminal.style.left = prevLeftHide; // Restore previous left value
+    terminal.style.top = prevTopHide; // Restore previous top value
+    
     terminal.classList.remove("hidden");
-
-    // terminalAPP.style.display = "none"; // Hide the app button
   }
 }
 
+
+let prevLeft, prevTop; // Store previous top and left values
+
 function Maxim() {
   if (!terminal.classList.contains("maxed")) {
-    terminal.style.left = "0"; // Hide the app button
-    terminal.style.top = "0"; // Hide the app button
+    prevLeft = terminal.style.left; // Store previous left value
+    prevTop = terminal.style.top; // Store previous top value
+    
+    terminal.style.left = "0";
+    terminal.style.top = "0";
+    
     if (terminal.classList.contains("hidden")) {
       terminal.classList.remove("hidden");
     }
+    
     terminal.classList.add("maxed");
   } else {
+    terminal.style.left = prevLeft; // Restore previous left value
+    terminal.style.top = prevTop; // Restore previous top value
+    
     terminal.classList.remove("maxed");
   }
 }
 
+
 function AppOpen() {
+  terminal.style.top = '16%';
+  terminal.style.left = '16%';
   if(!terminal.classList.contains("hidden") && !(terminal.style.display == "none")){
     terminal.classList.add("shake");
 
