@@ -452,21 +452,33 @@ function Maxim() {
 }
 
 function AppOpen() {
+
+
+  
+  
   if (terminal.classList.contains("hidden")) {
     terminal.classList.remove("hidden");
-    // terminalAPP.style.display = "none"; // Hide the app button
   }
-
+  
   if (terminal.style.display == "none") {
+    terminal.classList.add("opening");
+  
+    setTimeout(() => {
+        terminal.classList.remove("opening");
+    }, 500);
     terminal.style.display = "block";
-    // terminalAPP.style.display = "none"; // Hide the app button
   }
 }
 
 function closeT() {
-  terminal.style.display = "none";
-  terminalAPP.style.display = "initial"; // Show the app button
+  terminal.classList.add("closing");
+
+  setTimeout(() => {
+      terminal.style.display = "none";
+      terminal.classList.remove("closing");
+  }, 500);
 }
+
 
 function generateSpeechBubble(message) {
   const lines = message.split("\n");

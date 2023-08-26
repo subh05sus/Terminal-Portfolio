@@ -280,9 +280,10 @@ right: 0;
     top: 0;
 }
 .Buttons {
-    /* Existing styles */
     cursor: grab;
+    z-index: 1001;
 }
+
 
 body * {
     user-select: none;
@@ -292,10 +293,52 @@ body {
     background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat;
 }
-.titlebar{
-    display: none;
+
+
+.titlebar {
+    color: white;
+    text-align: center;
+    position:relative;
+    flex-grow: 1;
+    transform: translate(-7%, -35%);
+    font-size: 15px;
+    transition: all 0.35s ease-in;
+    z-index: 15;
+}
+.titlebar:active{
+    background-color: transparent;
 }
 
+
+@keyframes closeAnimation {
+    from {
+        opacity: 1;
+        transform: translate(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+.closing {
+    animation: closeAnimation 0.5s forwards;
+}
+
+@keyframes openAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.opening {
+    animation: openAnimation 0.5s forwards;
+}
 
 
 @media only screen and (max-width: 1600px) {
@@ -309,7 +352,7 @@ body {
             text-align: center;
             position:relative;
             flex-grow: 1;
-            transform: translateY(-35%);
+            transform: translate(0, -35%);
             font-size: 15px;
         }
     }
@@ -357,13 +400,5 @@ body {
         
     }
     
-    .titlebar {
-        color: white;
-        text-align: center;
-        position:relative;
-        flex-grow: 1;
-        transform: translateY(-35%);
-        font-size: 15px;
 
-    }
 }
