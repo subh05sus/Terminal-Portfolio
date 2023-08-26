@@ -7,7 +7,6 @@ function on_load() {
   content = document.getElementById("Content");
   terminalAPP = document.getElementById("app");
   AvButtons = document.getElementById("Buttons");
-  terminalAPP.style.display = "none";
   terminal.getElementsByTagName("form")[0].onsubmit = function () {
     command_handler(terminal.getElementsByTagName("input")[0].value);
     terminal.getElementsByTagName("input")[0].value = "";

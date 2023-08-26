@@ -286,7 +286,11 @@ right: 0;
 body * {
     user-select: none;
 }
-
+body {
+    background-image: url('bg.jpg');
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat;
+}
 
 @media only screen and (max-width: 1600px) {
 
