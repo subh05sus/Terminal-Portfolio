@@ -13,6 +13,7 @@ function on_load() {
   terminalAPP = document.getElementById("app");
   AvButtons = document.getElementById("Buttons");
   AppIcon = document.getElementById("AppIcon");
+  
   terminal.getElementsByTagName("form")[0].onsubmit = function () {
     command_handler(terminal.getElementsByTagName("input")[0].value);
     terminal.getElementsByTagName("input")[0].value = "";
@@ -473,7 +474,7 @@ function Hide() {
     if (!(ResumeTab.style.display == 'none') && ResumeTab.classList.contains("hidden")) {
       terminal.style.left = '21.5%';    
     }else{
-
+      
       terminal.style.left = "0";
     }    terminal.style.top = "10%";
     
@@ -490,7 +491,10 @@ function Hide() {
     
     terminalAPP.style.display = "initial"; // Show the app button
   } else {
-    terminal.style.left = prevLeftHide; // Restore previous left value
+    if (!(ResumeTab.style.display == 'none') && ResumeTab.classList.contains("hidden") && (ResumeTab.style.left == '21.5%')) {
+      ResumeTab.style.left = '0';    
+    }
+      terminal.style.left = prevLeftHide; // Restore previous left value
     terminal.style.top = prevTopHide; // Restore previous top value
     
     terminal.classList.remove("hidden");
