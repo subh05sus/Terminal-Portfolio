@@ -482,10 +482,10 @@ function Hide() {
     }
     
     terminal.classList.add("hidden");
-    // AppIcon.classList.add("appMin");
+    AppIcon.classList.add("appMin");
     
     setTimeout(function() {
-      // AppIcon.classList.remove("appMin");
+      AppIcon.classList.remove("appMin");
     }, 500);
     
     terminalAPP.style.display = "initial"; // Show the app button
@@ -702,9 +702,6 @@ if (userConfirmed) {
 
 
 function HideResumeTab() {
-  
-  
-
 
   if (!ResumeTab.classList.contains("hidden")) {
     prevLeftHide = ResumeTab.style.left; // Store previous left value
@@ -723,10 +720,10 @@ function HideResumeTab() {
     }
     
     ResumeTab.classList.add("hidden");
-    AppIcon.classList.add("appMin");
+    AppIcon2.classList.add("appMin");
     
     setTimeout(function() {
-      AppIcon.classList.remove("appMin");
+      AppIcon2.classList.remove("appMin");
     }, 500);
     
     ResumeTabAPP.style.display = "initial"; // Show the app button
@@ -746,7 +743,9 @@ function HideResumeTab() {
 
 function AppOpenResumeTab() {
   ResumeTab.classList.add("maxed");
-
+  if (!(terminal.style.display == 'none') && !(terminal.classList.contains("hidden"))) {
+    ResumeTab.style.zIndex = "100";   
+  }
   ResumeTab.style.left = "0";
   ResumeTab.style.top = "0";
   if(!ResumeTab.classList.contains("hidden") && !(ResumeTab.style.display == "none")){
@@ -783,6 +782,13 @@ function closeResumeTab() {
     ResumeTab.classList.remove("closing");
   }, 500);
 }
+
+
+
+
+
+
+
 
 
 
