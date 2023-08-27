@@ -11,10 +11,21 @@
 
 <body onload="loadfun()">
     <div id="loading"> <img src="https://i.imgur.com/FEDTpyE.gif" alt="Loading"></div>
-            <button class="app" id="app" onclick="AppOpen()"><img src="terminal.png" alt="Terminal" id="AppIcon"></button>
+    <div class="button-container">
+        <button class="app" id="app" onclick="AppOpen()">
+            <img src="terminal.png" alt="Terminal" id="AppIcon">
+            <span>Terminal</span>
+        </button>
+        <button class="app2" id="app2" onclick="OpenStandardPortfolio()">
+            <img src="profile.png" alt="StandardPortfolio" id="AppIcon">
+            <span>Standard Portfolio</span>
+        </button>
+    </div>
+    
+    
             <div id="Terminal" class="Terminal">
                 <br>
-                Hi, I am <span class="name" id="element">Subhadip Saha :)</span><br><br>
+                Hi, I am <span class="name">Subh</span><span class="name" id="element"></span><br><br>
                 I am a <span class="game">Game Developer</span> and aspiring <span class="backend">Backend
                     Developer</span>
                     ^_^<br>
@@ -40,9 +51,10 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-            strings: ['', 'Subhadip Saha^3000', 'Subh'],
+            strings: ['adip Saha :)^3000','^3000'],
             typeSpeed: 45,
             smartBackspace: true, // Default value
+            loop:true,
         });
     </script>
     <script>on_load()</script>

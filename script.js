@@ -664,3 +664,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+function OpenStandardPortfolio() {
+var userConfirmed = confirm("Do you want to proceed and visit the standard portfolio?");
+
+if (userConfirmed) {
+    window.open("https://subhadipsaha.netlify.app")
+} else {
+    alert("Umm, this Terminal is good for timepass though");
+}
+
+}
