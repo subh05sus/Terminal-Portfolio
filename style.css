@@ -226,7 +226,7 @@ form {
 .app{
     display: initial;
     margin-left: 32px;
-    margin-top: 60px;
+    margin-top: 32px;
     height: 75px;
     position: absolute;
     background: none;
@@ -239,7 +239,7 @@ form {
 .app2{
     display: initial;
     margin-left: 32px;
-    margin-top: 180px;
+    margin-top: 162px;
     height: 75px;
     position: absolute;
     background: none;
@@ -252,7 +252,7 @@ form {
 .app3{
     display: initial;
     margin-left: 32px;
-    margin-top: 300px;
+    margin-top: 282px;
     height: 75px;
     position: absolute;
     background: none;
@@ -420,9 +420,10 @@ body * {
 }
 body {
     background-image: url('bg.jpg');
-    background-size: cover; /* Adjust as needed */
+    background-size: cover; 
     background-repeat: no-repeat;
 }
+
 
 
 .titlebar {
