@@ -14,36 +14,53 @@
     <div class="button-container">
         <button class="app" id="app" onclick="AppOpen()">
             <img src="terminal.png" alt="Terminal" id="AppIcon">
-            <span>Terminal</span>
+            <span class="term">Terminal</span>
         </button>
-        <button class="app2" id="app2" onclick="OpenStandardPortfolio()">
+        <button class="app2" id="app2" onclick="AppOpenResumeTab()">
+            <img src="resume.png" alt="MyResume" id="AppIcon">
+            <span class="resu">My Resume</span>
+        </button>
+        <button class="app3" id="app3" onclick="OpenStandardPortfolio()">
             <img src="profile.png" alt="StandardPortfolio" id="AppIcon">
-            <span>Standard Portfolio</span>
+            <span class="port">Standard<br>Portfolio</span>
         </button>
     </div>
-    
-    
-            <div id="Terminal" class="Terminal">
-                <br>
-                Hi, I am <span class="name">Subh</span><span class="name" id="element"></span><br><br>
-                I am a <span class="game">Game Developer</span> and aspiring <span class="backend">Backend
-                    Developer</span>
-                    ^_^<br>
-                    Won an <a class="mlh" href="https://twitter.com/SubhadipSuDi/status/1690924206920523776?s=20">MLH
-                        Hackathon</a> - Building <a class="ddc"
-                        href="https://www.linkedin.com/company/devdotcom">DevDotCom</a> - Freelance Graphic Designer
-                        <p id="Content" class="Content">
-                            <br>Type help for a list of commands.<br>
-                        </p><br><span class='meh'>$ </span>
-                        <form><input class="command" /></form><br>
-                    
-                    <div class="Buttons" id="Buttons">
-                        <button class="x titlebutton" onclick=closeT()></button>
-                        <button class="Under titlebutton" onclick="Hide()"></button>
-                        <button class="Maximize titlebutton" onclick="Maxim()"></button>
-                        <span class="titlebar">Portfolio</span>
-                    </div>
-                </div>
+
+
+    <div id="Terminal" class="Terminal">
+        <br>
+        Hi, I am <span class="name">Subh</span><span class="name" id="element"></span><br><br>
+        I am a <span class="game">Game Developer</span> and aspiring <span class="backend">Backend
+            Developer</span>
+        ^_^<br>
+        Won an <a class="mlh" href="https://twitter.com/SubhadipSuDi/status/1690924206920523776?s=20">MLH
+            Hackathon</a> - Building <a class="ddc" href="https://www.linkedin.com/company/devdotcom">DevDotCom</a> -
+        Freelance Graphic Designer
+        <p id="Content" class="Content">
+            <br>Type help for a list of commands.<br>
+        </p><br><span class='meh'>$ </span>
+        <form><input class="command" /></form><br>
+
+        <div class="Buttons" id="Buttons">
+            <button class="x titlebutton" onclick=closeT()></button>
+            <button class="Under titlebutton" onclick="Hide()"></button>
+            <button class="Maximize titlebutton" onclick="Maxim()"></button>
+            <span class="titlebar">Portfolio</span>
+        </div>
+    </div>
+
+
+
+    <div id="ResumeTab" class="ResumeTab">
+        <div class="image-container">
+            <img src="resumePage.jpg" alt="Image" class="resumePage"/>
+        </div>
+        <div class="Buttons ButtonsResumeTab" id="Buttons">
+            <button class="x titlebutton" onclick=closeResumeTab()></button>
+            <button class="Under titlebutton UnderR" onclick="HideResumeTab()"></button>
+            <span class="titlebarResumeTab">Resume</span>
+        </div>
+    </div>
 
 
 
@@ -51,16 +68,16 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-            strings: ['adip Saha :)^3000','^3000'],
+            strings: ['adip Saha :)^3000', '^3000'],
             typeSpeed: 45,
             smartBackspace: true, // Default value
-            loop:true,
+            loop: true,
         });
     </script>
     <script>on_load()</script>
     <script>
         var load = document.getElementById("loading");
-        function loadfun(){
+        function loadfun() {
             load.style.display = 'none';
         }
     </script>

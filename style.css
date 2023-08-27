@@ -31,6 +31,19 @@ body {
     transition: all .35s ease-in;
     margin-top: 0;
 }
+.ResumeTab {
+    --padding: 50px;
+    --margin: 0;
+    padding: var(--padding);
+    margin: var(--margin);
+    height: calc(100vh - calc(calc(var(--padding) + var(--margin)) * 2));
+    border-radius: 10px;
+    background: #111;
+    color: white;
+    overflow-x: hidden;
+    transition: all .35s ease-in;
+    margin-top: 0;
+}
 
 input {
     background: none;
@@ -75,6 +88,12 @@ a {
 
 .x:hover {
     background-color: rgb(217, 83, 79, 0.7);
+}
+
+.hidden{
+    .UnderR{
+        background-color: rgb(76, 175, 80); /* Green */
+    }
 }
 
 
@@ -206,7 +225,7 @@ form {
 
 .app{
     display: initial;
-    margin-left: 60px;
+    margin-left: 32px;
     margin-top: 60px;
     height: 75px;
     position: absolute;
@@ -219,8 +238,21 @@ form {
 }
 .app2{
     display: initial;
-    margin-left: 30px;
+    margin-left: 32px;
     margin-top: 180px;
+    height: 75px;
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.app3{
+    display: initial;
+    margin-left: 32px;
+    margin-top: 300px;
     height: 75px;
     position: absolute;
     background: none;
@@ -232,6 +264,9 @@ form {
 }
 
 .Terminal{
+    padding: 40px;
+}
+.ResumeTab{
     padding: 40px;
 }
 
@@ -252,15 +287,24 @@ img {
 }
 
 .app,
-.app2 {
+.app2,
+.app3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px; /* Adjust this to control the spacing between image and text */
 }
 .app span,
-.app2 span {
+.app2 span,
+.app3 span {
     color: white;
+}
+
+.term,
+.port,
+.resu{
+    display: block;
+    z-index: -10;
 }
 
 
@@ -271,6 +315,12 @@ img {
     margin-right: 5px; 
 }
 .app2 img {
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    margin-right: 5px; 
+}
+.app3 img {
     border-radius: 100px;
     width: 70px;
     height: 70px;
@@ -298,11 +348,19 @@ right: 0;
     z-index: 2;
     position: absolute;
 }
+.ResumeTab{
+    z-index: 20;
+    position: absolute;
+}
 .Buttons{
     z-index: 3;
 }
 ::-webkit-scrollbar {
     display: none;.titlebar {
+        text-align: center;
+        margin: 0 auto; /* Center the titlebar */
+    }
+    display: none;.titlebarResumeTab {
         text-align: center;
         margin: 0 auto; /* Center the titlebar */
     }
@@ -326,12 +384,37 @@ right: 0;
     left: 0;
     top: 0;
 }
-.Buttons {
+  .ResumeTab {
+    background: rgba(17, 17, 17, 0.7); /* Add transparency */
+    backdrop-filter: blur(10px); /* Add blur effect */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.titlebar {
     cursor: grab;
     z-index: 1001;
 }
+.ButtonsResumeTab {
+    z-index: 1002;
+}
+.image-container{
+    opacity: 1;
+    transition: all 0.35s ease-in;
+    transform: scale(0.9);
 
+}
+.resumePage{
+    display: block;
+    width: -webkit-fill-available;
+    height: auto;
+}
 
+.hidden{
+    .image-container{
+        opacity: 0;
+    }
+}
 body * {
     user-select: none;
 }
@@ -353,6 +436,19 @@ body {
     z-index: 15;
 }
 .titlebar:active{
+    background-color: transparent;
+}
+.titlebarResumeTab {
+    color: white;
+    text-align: center;
+    position:relative;
+    flex-grow: 1;
+    transform: translate(0, -35%);
+    font-size: 15px;
+    transition: all 0.35s ease-in;
+    z-index: 15;
+}
+.titlebarResumeTab:active{
     background-color: transparent;
 }
 
@@ -403,6 +499,15 @@ body {
             transform: translate(0, -35%);
             font-size: 15px;
         }
+        .titlebarResumeTab{
+            display:inline;
+            color: white;
+            text-align: center;
+            position:relative;
+            flex-grow: 1;
+            transform: translate(0, -35%);
+            font-size: 15px;
+        }
     }
     
     .hidden > .Buttons {
@@ -416,6 +521,16 @@ body {
     }
 
     .Terminal{
+        width: 60%;
+        height: 60%;
+        font-size: 0.8rem;
+    }
+    .ResumeTab > .Buttons {
+        left: 20px;
+        top: 10px;
+    }
+
+    .ResumeTab{
         width: 60%;
         height: 60%;
         font-size: 0.8rem;

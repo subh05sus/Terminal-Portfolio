@@ -1,10 +1,14 @@
 let terminal;
+let ResumeTab;
 let content;
 let terminalAPP;
 
 function on_load() {
   terminal = document.getElementById("Terminal");
   terminal.style.display = "none"
+  ResumeTab = document.getElementById("ResumeTab");
+  ResumeTab.style.display = "none"
+  ResumeTab.classList.add("maxed");
   content = document.getElementById("Content");
   terminalAPP = document.getElementById("app");
   AvButtons = document.getElementById("Buttons");
@@ -457,18 +461,22 @@ function Hide() {
     prevLeftHide = terminal.style.left; // Store previous left value
     prevTopHide = terminal.style.top; // Store previous top value
     
-    terminal.style.left = "0";
-    terminal.style.top = "10%";
+    if (!(ResumeTab.style.display == 'none') && ResumeTab.classList.contains("hidden")) {
+      terminal.style.left = '21.5%';    
+    }else{
+
+      terminal.style.left = "0";
+    }    terminal.style.top = "10%";
     
     if (terminal.classList.contains("maxed")) {
       terminal.classList.remove("maxed");
     }
     
     terminal.classList.add("hidden");
-    AppIcon.classList.add("appMin");
+    // AppIcon.classList.add("appMin");
     
     setTimeout(function() {
-      AppIcon.classList.remove("appMin");
+      // AppIcon.classList.remove("appMin");
     }, 500);
     
     terminalAPP.style.display = "initial"; // Show the app button
@@ -493,6 +501,10 @@ function Maxim() {
     
     if (terminal.classList.contains("hidden")) {
       terminal.classList.remove("hidden");
+
+      if ((ResumeTab.classList.contains("hidden")) && (ResumeTab.style.left == '21.5%')) {
+        ResumeTab.style.left = "0";
+      }
     }
     
     terminal.classList.add("maxed");
@@ -534,7 +546,9 @@ function AppOpen() {
 function closeT() {
   content.innerHTML = "";
   terminal.classList.add("closing");
-
+  if ((ResumeTab.classList.contains("hidden")) && (ResumeTab.style.left == '21.5%')) {
+    ResumeTab.style.left = "0";
+  }
   setTimeout(() => {
     terminal.style.display = "none";
     terminal.classList.remove("closing");
@@ -652,6 +666,7 @@ document.addEventListener("DOMContentLoaded", function () {
   terminalHeader.addEventListener("mousedown", handleMouseDown);
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("mouseup", handleMouseUp);
+  
 });
 
 
@@ -674,3 +689,91 @@ if (userConfirmed) {
 }
 
 }
+
+
+
+function HideResumeTab() {
+  
+  
+
+
+  if (!ResumeTab.classList.contains("hidden")) {
+    prevLeftHide = ResumeTab.style.left; // Store previous left value
+    prevTopHide = ResumeTab.style.top; // Store previous top value
+    
+    if (!(terminal.style.display == 'none') && terminal.classList.contains("hidden")) {
+      ResumeTab.style.left = '21.5%';    
+    }else{
+
+      ResumeTab.style.left = "0";
+    }
+    ResumeTab.style.top = "10%";
+    
+    if (ResumeTab.classList.contains("maxed")) {
+      ResumeTab.classList.remove("maxed");
+    }
+    
+    ResumeTab.classList.add("hidden");
+    AppIcon.classList.add("appMin");
+    
+    setTimeout(function() {
+      AppIcon.classList.remove("appMin");
+    }, 500);
+    
+    ResumeTabAPP.style.display = "initial"; // Show the app button
+  } else {
+    ResumeTab.style.left = 0; 
+    ResumeTab.style.top = 0; 
+    if ((terminal.classList.contains("hidden")) && (terminal.style.left == '21.5%')) {
+      terminal.style.left = "0";
+    }
+    ResumeTab.classList.remove("hidden");
+    ResumeTab.classList.add("maxed");
+  }
+}
+
+
+
+
+function AppOpenResumeTab() {
+  ResumeTab.classList.add("maxed");
+
+  ResumeTab.style.left = "0";
+  ResumeTab.style.top = "0";
+  if(!ResumeTab.classList.contains("hidden") && !(ResumeTab.style.display == "none")){
+    ResumeTab.classList.add("shake");
+
+    setTimeout(function() {
+        ResumeTab.classList.remove("shake");
+    }, 500);
+    
+
+  }
+  if (ResumeTab.classList.contains("hidden")) {
+    ResumeTab.classList.remove("hidden");
+  }
+
+  if (ResumeTab.style.display == "none") {
+    ResumeTab.classList.add("opening");
+
+    setTimeout(() => {
+      ResumeTab.classList.remove("opening");
+    }, 500);
+    ResumeTab.style.display = "block";
+  }
+}
+
+function closeResumeTab() {
+  content.innerHTML = "";
+  ResumeTab.classList.add("closing");
+  if ((terminal.classList.contains("hidden")) && (terminal.style.left == '21.5%')) {
+    terminal.style.left = "0";
+  }
+  setTimeout(() => {
+    ResumeTab.style.display = "none";
+    ResumeTab.classList.remove("closing");
+  }, 500);
+}
+
+
+
