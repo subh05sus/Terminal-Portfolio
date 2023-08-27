@@ -123,6 +123,11 @@ function command_handler(command) {
               <td>Image</td>
               <td>93 KB</td>
             </tr>
+            <tr>
+              <td>StandardPortfolio.html</td>
+              <td>HTML</td>
+              <td>140 KB</td>
+            </tr>
           </table>
           <br>`;
       break;
@@ -172,6 +177,10 @@ function command_handler(command) {
     case "cat resume.pdf":
       window.open(
         "https://d1fdloi71mui9q.cloudfront.net/D42aFXgIRBuuTf4v3BcQ_Subhadip-s%20Resume.pdf"
+      );
+    case "cat standardportfolio.html":
+      window.open(
+        "https://subhadipsaha.netlify.app"
       );
       // content.innerHTML +=
       // "<br>Download my resume: <a href='https://d1fdloi71mui9q.cloudfront.net/D42aFXgIRBuuTf4v3BcQ_Subhadip-s%20Resume.pdf' download>Resume.pdf</a><br>";
